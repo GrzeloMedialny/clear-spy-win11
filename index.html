@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🛡️ Przewodnik: Odszpiegowanie Windows 11</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      padding: 30px;
+      line-height: 1.7;
+    }
+    h1, h2, h3 {
+      color: #6af9ff;
+    }
+    code {
+      background-color: #1e1e1e;
+      color: #00ff7f;
+      padding: 3px 6px;
+      border-radius: 4px;
+    }
+    .warning {
+      color: #ff6b6b;
+      font-weight: bold;
+    }
+    .note {
+      color: #ffc107;
+    }
+    .success {
+      color: #00ff7f;
+    }
+    ul {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛡️ Przewodnik: Jak oczyścić Windows 11 z funkcji szpiegujących i używać go offline pod Adobe</h1>
+
+  <p><span class="note">Cel:</span> Stworzenie stabilnego, offline’owego systemu Windows 11 bez telemetrii i zbędnych usług, gotowego pod pracę graficzną (np. Adobe Photoshop, Illustrator).</p>
+
+  <hr>
+
+  <h2>1. Instalacja Windows 11 BEZ internetu</h2>
+  <ul>
+    <li><strong>Odłącz kabel Ethernet lub wyłącz Wi-Fi</strong> podczas instalacji</li>
+    <li>Kiedy system żąda konta Microsoft, użyj kombinacji <code>Shift + F10</code></li>
+    <li>Wpisz w oknie terminala:
+      <br><code>OOBE\BYPASSNRO</code>
+    </li>
+    <li>System zrestartuje się i umożliwi utworzenie lokalnego konta</li>
+  </ul>
+
+  <hr>
+
+  <h2>2. Wyłącz i usuń usługi szpiegujące</h2>
+
+  <h3>Usługi do wyłączenia (naciśnij <code>Win + R</code>, wpisz <code>services.msc</code>):</h3>
+  <ul>
+    <li><span class="warning">Connected User Experiences and Telemetry</span></li>
+    <li><span class="warning">Diagnostics Tracking Service</span></li>
+    <li>dmwappushsvc</li>
+    <li>Windows Error Reporting Service</li>
+    <li>SysMain (Superfetch)</li>
+    <li><strong>Windows Update</strong> (jeśli system ma pozostać offline)</li>
+  </ul>
+
+  <h3>Rejestr (Regedit)</h3>
+  <p>Przejdź do klucza: <code>HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection</code></p>
+  <p>Dodaj wartości DWORD (32-bit):</p>
+  <ul>
+    <li><code>AllowTelemetry</code> = <code>0</code></li>
+    <li><code>DisableTelemetry</code> = <code>1</code></li>
+  </ul>
+
+  <p class="warning">Uwaga: Błąd w rejestrze może unieruchomić system. Wykonaj kopię zapasową!</p>
+
+  <hr>
+
+  <h2>3. Zablokuj połączenia wychodzące (Firewall)</h2>
+  <ul>
+    <li>Otwórz Zaporę systemu Windows i ustaw domyślnie blokowanie <strong>wszystkich połączeń wychodzących</strong></li>
+    <li class="note">Opcjonalnie: dodaj wyjątek dla Adobe Creative Cloud tylko na czas aktywacji</li>
+  </ul>
+
+  <hr>
+
+  <h2>4. Narzędzia do automatycznego czyszczenia systemu</h2>
+  <ul>
+    <li><span class="success">✅ <strong>O&O ShutUp10++</strong></span> — najlepszy, darmowy, bezinstalacyjny</li>
+    <li><strong>WPD (Windows Privacy Dashboard)</strong></li>
+    <li><strong>Privacy.sexy</strong> lub <strong>Debotnet</strong></li>
+  </ul>
+
+  <hr>
+
+  <h2>5. Wyłączenie Windows Update (na zawsze)</h2>
+  <ul>
+    <li>Wyłącz usługę <code>Windows Update</code> w <code>services.msc</code></li>
+    <li>Zablokuj adresy <code>update.microsoft.com</code> w pliku <code>C:\Windows\System32\drivers\etc\hosts</code></li>
+  </ul>
+
+  <hr>
+
+  <h2>6. Odcięcie systemu od Internetu</h2>
+  <ul>
+    <li>Usuń sterowniki karty sieciowej</li>
+    <li>Zablokuj połączenia przez ustawienia Firewalla lub BIOS</li>
+    <li>W razie potrzeby – fizycznie usuń kartę Wi-Fi lub wyłącz z poziomu UEFI/BIOS</li>
+  </ul>
+
+  <hr>
+
+  <h2>7. Adobe w trybie offline – jak to zrobić?</h2>
+  <ul>
+    <li><strong>Starsze wersje (np. CS6)</strong> działają w pełni offline</li>
+    <li><strong>Creative Cloud</strong> — aktywuj raz z Internetem, potem blokuj połączenia (firewall/hosts)</li>
+    <li class="note">Nie korzystaj z Adobe Fonts ani Cloud, jeśli chcesz pełną izolację</li>
+  </ul>
+
+  <hr>
+
+  <h2>Alternatywa? Windows „Lite” lub własny build</h2>
+  <ul>
+    <li><strong>NTLite</strong> — stwórz własnego Windowsa bez bloatu</li>
+    <li><strong>Ameliorated Windows</strong> — specjalna edycja bez telemetrii</li>
+    <li><strong>Linux + VM z Windows</strong> — dla prawdziwych wojowników wolności</li>
+  </ul>
+
+  <hr>
+
+  <h2>🔚 Podsumowanie</h2>
+  <ul>
+    <li><span class="success">✔️ Tak – możesz z Windowsa 11 zrobić cichą, wydajną, nieszpiegowską stację offline</span></li>
+    <li><span class="warning">⚠️ Ale wymaga to ręcznych działań i pełnej kontroli nad siecią</span></li>
+    <li>🖥️ Adobe działa offline, o ile zadbasz o aktywację i izolację</li>
+  </ul>
+
+  <p class="note">Zadbaj o backup systemu po oczyszczeniu. Czysty system = spokój na lata.</p>
+
+  <hr>
+
+  <p style="text-align:center;"><strong>Grzelo Medialny © 2025 – Manual dla Wolnych Ludzi</strong></p>
+
+</body>
+</html>
