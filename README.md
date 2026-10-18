@@ -24,3 +24,4 @@ Ten projekt zawiera **przewodnik HTML (`index.html`)**, który krok po kroku pok
 4. Zapisz przewodnik na pendrive lub lokalnym dysku jako kopię offline
 
 -----------------------------------
+87i678ik678 78i 7t i678i 678i t678 i67
