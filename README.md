@@ -31,3 +31,4 @@ Ten projekt zawiera **przewodnik HTML (`index.html`)**, który krok po kroku pok
 -------------------------------
 rd rt hwrh rh r hrew
  r erh er e65h e6h6h 6 yhw6 
+   46 y4w6 y46y 46y 46y 46y 46y 
