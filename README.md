@@ -25,4 +25,4 @@ Ten projekt zawiera **przewodnik HTML (`index.html`)**, który krok po kroku pok
 
 
 u 6j6 j56j56j6j56j5 6 67j 6jr6j6rj64j4r6 6j46 467j45j7 677 jtrjrtrtj rty rjrryjr5 ry rj655h y5h 4y5h45yh 45y 64 
-6j46j6j6j 6j67j467j567 j56j56j467j 5667j657jj467 467j46 647 
+6j46j6j6j 6j67j467j567 j56j56j467j 5667j657jj467 467j46 647  7ju467j467j467j46 7j467j467j467j56j 65j657j657j567
