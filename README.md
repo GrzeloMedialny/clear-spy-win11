@@ -24,3 +24,4 @@ Ten projekt zawiera **przewodnik HTML (`index.html`)**, który krok po kroku pok
 4. Zapisz przewodnik na pendrive lub lokalnym dysku jako kopię offline
 
 
+u 6j6 j56j56j6j56j5 6 67j 6jr6j6rj64j4r6 6j46 467j45j7 677 
